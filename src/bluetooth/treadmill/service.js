@@ -10,7 +10,10 @@ function TreadmillService() {
 		uuid: '1826',
 		characteristics: [
 			this.measurement,
-			new (require('./featureCharacteristic'))()
+			new (require('./featureCharacteristic'))(),
+			new (require('./inclineDataCharacteristic'))(),
+			new (require('./controlPointCharacteristic'))()
+
 		]
 	});
 }
