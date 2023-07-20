@@ -177,8 +177,7 @@ If you have a monitor or touch screen connected to your Pi, you can run it in Ki
 FTMS Control Point characteristic is provided to allow automatic setting of the incline on your treadmill. I have tested this with KinoMap but not with Zwift.
 Negative values (Decline) cannot be passed through this characteristic.
 
-I haven't had chance to fully implement the incline settings into setttings.conf so whenever you run the initial setup, the treadmill settings will be overwritten.
-Just add ..
+The following incline settings are added into setttings.conf whenever you first run the setup. If you need to subsequently change them, just adjust the following lines :-
 
 ```bash
 exports.maxinc = 15;	
