@@ -180,9 +180,12 @@ Negative values (Decline) cannot be passed through this characteristic.
 I haven't had chance to fully implement the incline settings into setttings.conf so whenever you run the initial setup, the treadmill settings will be overwritten.
 Just add ..
 
-exports.maxinc = 15;	// maximum incline treadmill is capable of <br>
-exports.mininc = -3;	// minimum incline treadmill is capable of <br>
-exports.minstep = 1;	// minimum increment to change incline by (currently only 1 is supported) <br>
+```bash
+exports.maxinc = 15;	// maximum incline treadmill is capable of
+exports.mininc = -3;	// minimum incline treadmill is capable of
+exports.minstep = 1;	// minimum increment to change incline by (currently only 1 is supported)
+```
+
 
 to your settings.conf after running the initial setup otherwise you'll get an error.
 
