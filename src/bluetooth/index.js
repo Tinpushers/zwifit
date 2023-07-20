@@ -35,6 +35,11 @@ let updateFPS = 5,
 		incline: 0,
 		cadence: 0
 	},
+	stats = {
+		maxinc: 0,
+		mininc: 0,
+		minstep: 0
+	},
 	services = [
 		rscService,
 		treadmillService
@@ -79,14 +84,14 @@ function onStateChanged(state) {
 
 function onAccepted(clientAddress) {
 	if (current.clients.indexOf(clientAddress) === -1) {
-		console.log("Connected to Zwift", clientAddress);
+		console.log("Connected to FTMS", clientAddress);
 		current.clients.push(clientAddress);
 	}
 }
 
 function onDisconnected(clientAddress) {
 	if (current.clients.indexOf(clientAddress) >= 0) {
-		console.log("Disconnceted from Zwift", clientAddress);
+		console.log("Disconnected from FTMS", clientAddress);
 		current.clients.splice(current.clients.indexOf(clientAddress), 1);
 	}
 }
@@ -100,6 +105,7 @@ function onAdvertisingStarted(error) {
 }
 
 function onChangeReceived(data) {
+	
 	if (data.hr !== undefined) {
 		current.hr = data.hr;
 	}
@@ -114,7 +120,7 @@ function onChangeReceived(data) {
 	if (data.cadence !== undefined) {
 		current.cadence = data.cadence;
 	}
-	if (data.incline !== undefined) {
+	if (data.incline !== undefined) {		
 		current.incline = data.incline;
 	}
 }
