@@ -1,6 +1,7 @@
 var util = require('util');
 var bleno = require('bleno');
- var events = require('../../lib/events');
+var events = require('../../lib/events'),
+    constants = require('../../settings');
 
 function ControlPointCharacteristic(incline) {
     bleno.Characteristic.call(this, {
@@ -42,10 +43,13 @@ ControlPointCharacteristic.prototype.onWriteRequest = function (data, offset, wi
     else {
         
 
-        var incline = Math.round(data.readUInt8(1) * 0.1);        
-        
-        if (incline > 15) { incline = 15; }
-        if (incline < -3) { incline = -3; }
+        var incline = Math.round(data.readUInt8(1) * 0.1);     
+
+        maxinc = parseInt(constants.maxinc);
+        mininc = parseInt(constants.mininc);
+
+        if (incline > maxinc) { incline = maxinc; }
+        if (incline < mininc) { incline = mininc; }
                 
 
 
