@@ -20,6 +20,9 @@ exports.bleDetails = null;
 exports.bleServices = null;
 exports.bleAdvertisingData = null;
 exports.bleScanData = null;
+exports.maxinc = 15;	// maximum incline treadmill is capable of
+exports.mininc = -3;	// minimum incline treadmill is capable of
+exports.minstep = 1;	// minimum increment to change incline by (currently only 1 is supported)
 
 exports.load = load;
 exports.toJSON = toJSON;
