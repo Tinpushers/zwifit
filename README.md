@@ -181,9 +181,9 @@ I haven't had chance to fully implement the incline settings into setttings.conf
 Just add ..
 
 ```bash
-exports.maxinc = 15;	// maximum incline treadmill is capable of
-exports.mininc = -3;	// minimum incline treadmill is capable of
-exports.minstep = 1;	// minimum increment to change incline by (currently only 1 is supported)
+exports.maxinc = 15;	
+exports.mininc = -3;	
+exports.minstep = 1;	
 ```
 
 
