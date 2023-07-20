@@ -186,7 +186,6 @@ exports.minstep = 1;
 ```
 
 
-to your settings.conf after running the initial setup otherwise you'll get an error.
 
 ## Contributing
 
